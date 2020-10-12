@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no,initial-scale=1.0">
+    <title>云家园</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="shortcut icon" type=image/x-icon href=https://pass-y.ncuos.com/favicon.ico>
+
+    <!--[if lt IE 9]>
+      <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+            width: 100%;
+        }
+
+        body {
+            color: #5f6468;
+        }
+
+        #bg {
+            background: url(https://pass-y.ncuos.com/bg.jpg) 50% no-repeat fixed;
+            background-size: cover;
+        }
+
+
+        .visible {
+            display: block !important;
+            height: 100% !important;
+            overflow: auto !important;
+        }
+
+        .control-form {
+            background-color: #fff;
+            border-radius: 8px;
+            color: #666;
+            max-width: 450px;
+            padding: 10px 30px;
+            margin: 40px auto 0;
+        }
+
+        #control-label {
+            padding-top: 7px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-weight: normal;
+        }
+
+        h3 {
+            font-weight: 300;
+        }
+
+        @media screen and (max-width: 767px) {
+            #bg {
+                background: #bbb;
+                background-size: cover;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 768px) {
+            #dis {
+                display: none;
+            }
+        }
+
+        .row .tip {
+            position: relative;
+            color: #8a6d3b;
+            background-color: #fcf8e3;
+            border-color: #faebcc;
+            padding: 15px;
+            padding-right: 35px;
+            margin-bottom: 20px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+        }
+
+        .tip p {
+            margin-bottom: 0;
+        }
+
+        .form-group {
+            margin: 0 -15px 15px -15px;
+        }
+
+        input:focus {
+            outline-color: #428bca;
+        }
+
+        .checkbox {
+            padding-top: 7px;
+        }
+
+        input[type=checkbox] {
+            margin-right: 10px;
+            line-height: normal;
+        }
+
+
+        #login button:hover {
+            background-color: #3071A9;
+        }
+
+        #close button:hover {
+            color: #7e7c72;
+        }
+        .app {
+            float: left;
+            width: 50%;
+            min-height: 1px;
+            padding: 0px 15px;
+            position: relative;
+        }
+
+        .icon {
+            position: relative;
+        }
+
+        /* 子绝父相 */
+        .icon .fa {
+            color: gray;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+
+        /* input输入框放到图标右边 */
+        .icon input {
+            padding-left: 30px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 11px;
+            right: 14px;
+        }
+
+        .close {
+            color: inherit;
+        }
+        .btn-lg{
+            line-height: 1.33;
+        }
+
+        .tail {
+            color: #fff;
+            padding-top: 10px;
+        }
+        
+        .btn-primary {
+            color: #fff;
+            background-color: #428bca;
+            border-color: #357ebd;
+        }
+    </style>
+</head>
+<!-- by 李健豪 -->
+
+<body>
+    <div class="visible" id="bg">
+        <div class="container">
+            <form class="control-form" method="POST">
+                <div class="row" style="padding: 0px 20px;">
+                    <h3 class="text-center text-primary">
+                        <i class="fa fa-mixcloud fa-fw"></i>
+                        云家园
+                        <small>信息服务平台</small>
+                        <a class="btn btn-success btn-xs" target="_blank"
+                            href="https://shang.qq.com/wpa/qunwpa?idkey=1ffcd88386a31108288aa8ef1b3879522672818d153e00e6f492d13ebf13efae">帮助</a>
+                    </h3>
+                    <div class="form-group">
+                        <label for="username" id="control-label">帐号</label>
+                        <div class="icon">
+                            <i class="fa fa-user"></i>
+                            <input class="form-control" type="text" placeholder="请输入学号/工资号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" id="control-label">密码</label>
+                        <div class="icon">
+                            <i class="fa fa-lock"></i>
+                            <input class="form-control" type="text" placeholder="密码">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" name="cookie" value="true">下次自动登录
+                            </label>
+                            <div class="pull-right">
+                                <a class="text-center" href="https://ncuos.com/loginBox/regainPassword">忘记密码?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group" id="login">
+                        <button type="submit" class="btn btn-block btn-primary btn-lg text-center">登录
+                        </button>
+                    </div>
+                    <div class="form-group" id="login">
+                        <a href="#reg" class="text-center">
+                            <button type="button" class="btn btn-block btn-primary btn-lg text-center" id="show" data-toggle="modal" data-target="#myModal">
+                                <strong>
+                                    新生注册
+                                </strong>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="form-group tip" id="close">
+                        <button type="button" class="close close-btn">
+                            <span>x</span>
+                        </button>
+                        <p>
+                            <strong>新生(本科)自助报到系统</strong>请关注<strong>南昌大学家园网</strong>微信公众号，了解更多具体新生报道系统流程<br>
+                            家园工作室QQ：<a href="http://qm.qq.com/cgi-bin/qm/qr?k=OtyR5Xib0OPbuAtjZtXeyVc5-a6y7zQU">2459289916</a><br>
+                            2020南昌大学本科迎新群：
+                            <a target="_blank" href="https://qm.qq.com/cgi-bin/qm/qr?k=pCH_WujTSR0gER5lAakD1mbywk5EXK1X&amp;jump_from=webapi">
+                                <img src="http://pub.idqqimg.com/wpa/images/group.png" alt="南昌大学2020官方迎新" title="南昌大学2020官方迎新">
+                            </a><br>
+                            校园APP：<a target="_blank" href="https://incu.ncuos.com">南大家园</a>
+                        </p>
+                    </div>
+                    <div class="form-group extend">
+                        <blockquote>
+                            <div class="row">
+                                <div class="app">
+                                    <a target="_blank" class="btn btn-danger btn-block"
+                                        href="https://itunes.apple.com/us/app/%E5%8D%97%E5%A4%A7%E5%AE%B6%E5%9B%AD/id1209726561?mt=8">
+                                        <i class="fa fa-apple fa-fw" aria-hidden="true"></i>ios版
+                                    </a>
+                                </div>
+                                <div class="app">
+                                    <a target="_blank" class="btn btn-block btn-success"
+                                        href="http://incu-download.ncuos.com/iNCU_latest.apk">
+                                        <i class="fa fa-android" aria-hidden="true"></i> Android版
+                                    </a>
+                                </div>
+                            </div>
+                        </blockquote>
+                        <p>
+                            <small>下载南大家园手机客户端
+                                <i class="fa fa-hand-o-up"></i>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <p class="text-center tail" id="dis">
+            <i class="fa fa-copyright"></i>
+            Powered By
+            <a href="http://team.ncuos.com/" target="-blank" style="color:#ffffff">家园工作室</a>
+        </p>
+        <!-- 直接套用了bootstrap的模态框（Modal）插件 -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <form action="#" class="form-horizontal form" id="form1">
+                <div class="modal-dialog" id="form1">
+                    <div class="modal-content" id="form1">
+                        <div class="modal-header" id="form1">
+                            <h5 class="modal-title " id="form1">新生注册</h5>
+                        </div>
+                        <div class="modal-body" id="form1">
+                            <div class="form-group" id="form1"> 
+                                <label class="col-sm-3 control-label" id="form1">考生号</label>
+                                <div class="col-sm-7" id="form1"> 
+                                    <input type="number" class="form-control" id="form1">
+                                </div>
+                            </div>
+                            <div class="form-group" id="form1"> 
+                                <label class="col-sm-3 control-label" id="form1">身份证号</label>
+                                <div class="col-sm-7"id="form1">
+                                    <input type="text " class="form-control" id="form1"> 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer" id="form1">
+                            <button type="button" class="btn btn-primary" id="form1">查询</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var btn = document.querySelector('.close-btn')
+        var box = document.getElementById('close')
+        btn.onclick = function () {
+            box.style.display = 'none'
+        }
+    </script>
+</body>
+
+</html>
